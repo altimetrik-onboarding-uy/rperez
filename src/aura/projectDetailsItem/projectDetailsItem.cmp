@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global">
+    <aura:attribute name ="case" type="Test_Case__c"/>
+    
+    <aura:registerEvent name="deleteTestCaseEvent" type="c:deleteTestCaseEvent"/>
+    <aura:registerEvent name="editTestCaseEvent" type="c:editTestCaseEvent"/>
+    
+    <div class="slds-box">    
+        <div class="slds-grid slds-gutters" >
+            <div class="slds-col">
+                <lightning:button iconName="utility:delete" class="slds-size_xxx-small slds-float_right" 
+                                  onclick= "{!c.fireDeleteEvent}" variant="destructive" type="submit"/>
+                <p class="slds-text-heading--small">
+                    
+                    <lightning:button variant="base" label="{!v.case.Name}" title="Name" onclick="{!c.fireEditEvent}"/></p>
+                
+                <h1>Title:
+                    
+                        <lightning:formattedText title="Title" value="{!v.case.Title__c}" />
+                </h1>                
+            </div>
+        </div>
+    </div>
+</aura:component>

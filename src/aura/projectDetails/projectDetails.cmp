@@ -1,0 +1,44 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" controller="projectTileController">
+    
+    <aura:attribute name = "project" type="Project__c"/>    
+    <aura:attribute name="testCases" type="Test_Case__c[]"/>
+    
+    <aura:registerEvent name="showCreateTestCaseEvent" type="c:showCreateTestCaseEvent"/>
+    
+    
+    <h1 class= "slds-page-header slds-text-title_caps titleClass" >
+        <lightning:icon iconName="custom:custom27" alternativeText="Test Cases" />
+        {!' '+v.project.Name}
+    </h1>
+    <div class="slds-box">
+        <div class="slds-p-horizontal--small">
+            <p class="slds-text-heading--small">
+                Status:
+                <lightning:formattedText title="Status" value="{!v.project.Status__c}" /></p>
+            <p class="slds-text-heading--small">
+                Description:
+                <lightning:formattedText title="Description" value="{!v.project.Description__c}" /></p>
+        </div>
+    </div>
+    
+    
+    <!--                 Test Cases List                  -->
+    
+    <h1 class= "slds-page-header slds-text-title_caps titleClass" >
+        <lightning:button iconName="action:new" class="slds-size_xxx-small slds-float_right" 
+                          onclick= "{!c.fireShowCreateTestCaseEvent}"/>
+        <lightning:icon iconName="standard:list_email" alternativeText="Test Cases" />
+        {!' Test Cases ('+v.testCases.length+')'}
+    </h1>
+    <div class="slds-box">
+        <div class="slds-grid slds-gutters" >
+            <div class="slds-col">
+                <aura:iteration items="{!v.testCases}" var="case">
+                    <c:projectDetailsItem case="{!case}"/>
+                </aura:iteration>
+            </div>
+        </div>            
+    </div>
+    
+</aura:component>

@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Quality_Management</members>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>NewTestCaseEvent</members>
+        <members>createTestCase</members>
+        <members>createTestCaseEvent</members>
+        <members>deleteTestCaseEvent</members>
+        <members>editTestCaseEvent</members>
+        <members>hideCreateTestCaseEvent</members>
+        <members>projectDetails</members>
+        <members>projectDetailsEvent</members>
+        <members>projectDetailsItem</members>
+        <members>projectTile</members>
+        <members>projectTileItem</members>
+        <members>showCreateTestCaseEvent</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Testacular</members>
         <name>CustomApplication</name>
     </types>
     <types>
@@ -10,7 +29,9 @@
         <name>CustomObject</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Project__c</members>
+        <members>Test_Case__c</members>
+        <members>Testacular</members>
         <name>CustomTab</name>
     </types>
     <types>

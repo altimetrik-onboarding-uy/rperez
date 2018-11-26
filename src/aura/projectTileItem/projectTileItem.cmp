@@ -1,0 +1,13 @@
+<aura:component>
+    <aura:attribute name ="project" type="Project__c"/>
+    <aura:registerEvent name="projectEvent" type="c:projectDetailsEvent"/>
+    
+    <div style="height: 5rem; width: 14rem;">
+        <lightning:button class="slds-button_brand slds-size_x-small" onclick= "{!c.fireProjectEvent}">
+               
+            <h1 class="tilefontsize">{!v.project.Name}</h1>
+           
+        </lightning:button>
+        
+    </div>
+</aura:component>
