@@ -5,18 +5,32 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>*</members>
+        <name>ApexComponent</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
         <members>NewTestCaseEvent</members>
         <members>createTestCase</members>
         <members>createTestCaseEvent</members>
         <members>deleteTestCaseEvent</members>
+        <members>editStepEvent</members>
         <members>editTestCaseEvent</members>
         <members>hideCreateTestCaseEvent</members>
         <members>projectDetails</members>
         <members>projectDetailsEvent</members>
         <members>projectDetailsItem</members>
+        <members>projectManager</members>
         <members>projectTile</members>
         <members>projectTileItem</members>
+        <members>projectsHeader</members>
         <members>showCreateTestCaseEvent</members>
+        <members>stepCard</members>
+        <members>swapCardEvent</members>
+        <members>testCaseSteps</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
@@ -25,6 +39,7 @@
     </types>
     <types>
         <members>Project__c</members>
+        <members>Test_Case_Step__c</members>
         <members>Test_Case__c</members>
         <name>CustomObject</name>
     </types>
@@ -33,6 +48,11 @@
         <members>Test_Case__c</members>
         <members>Testacular</members>
         <name>CustomTab</name>
+    </types>
+    <types>
+        <members>unfiled$public/CancelledFinishedProjectEmail</members>
+        <members>unfiled$public/ongoingProjects</members>
+        <name>EmailTemplate</name>
     </types>
     <types>
         <members>Project__c-Project Layout</members>
@@ -46,6 +66,10 @@
     <types>
         <members>Quality_Engineer</members>
         <name>Role</name>
+    </types>
+    <types>
+        <members>Project__c</members>
+        <name>Workflow</name>
     </types>
     <version>36.0</version>
 </Package>

@@ -15,17 +15,17 @@
     
     <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
     
-    <h1 class= "slds-page-header slds-text-title_caps testCaseClass" >
+    <h1 class= "slds-page-header slds-text-title_caps titleClass" >
         <lightning:button iconName="utility:close" class="slds-size_xxx-small slds-float--right" onclick="{!c.fireHideCreateTestCaseEvent}" />
-        <lightning:icon iconName="custom:custom23" size="small" alternativeText="Test Case" />
+        <lightning:icon iconName="custom:custom23" alternativeText="Test Case" />
         <aura:if isTrue="{!v.showEditCase > 0}">
-            {!'Edit: ' + v.newTestCase.Name + ' '}
+            {!' ' +v.newTestCase.Name}
             <aura:set attribute="else">
                 {!' ' + v.project.Name + ' new Test Case'}
             </aura:set>
         </aura:if>
     </h1>
-    
+    <div class="slds-box">
     <lightning:input aura:id="caseField" 
                      name="title"
                      value="{!v.newTestCase.Title__c}"
@@ -48,7 +48,7 @@
                      value="{!v.newTestCase.User_Story__c}"
                      required="true"/>
     
-    
+    </div>  
     <div class="slds-modal__footer" >
         <lightning:button class = "slds-icon_container_circle " onclick= "{!c.fireCreateTestCaseEvent}">
             <h1>Save</h1>

@@ -1,0 +1,21 @@
+<aura:component >
+    <aura:attribute name="step" type="Test_Case_Step__c"/>
+    
+    <aura:registerEvent name="swapCardEvent" type="c:swapCardEvent"/>
+    <aura:registerEvent name="editStepEvent" type="c:editStepEvent"/>
+    
+    <div class="slds-box" draggable="true" ondragstart="{!c.onDragStart}" ondrop="{!c.onDrop}" ondragover="{!c.allowDrop}">
+        <div>
+            <lightning:button variant="bare" label = "{!v.step.Name}" onclick="{!c.fireEditStep}"/>
+        </div>
+        <div>
+            <dl class="slds-list_horizontal slds-wrap">
+                <dt class="slds-item_label slds-text-color_weak slds-truncate " title="Description">Description:</dt>
+                <dd class="slds-item_detail slds-truncate" title="Description for first label">{!v.step.Description__c}</dd>
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Expected Result">Expected Result:</dt>
+                <dd class="slds-item_detail slds-truncate" title="Description for second label">{!v.step.Expected_Result__c}</dd>
+            </dl>
+        </div>
+    </div> 
+    
+</aura:component>

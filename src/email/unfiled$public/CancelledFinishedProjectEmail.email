@@ -1,0 +1,11 @@
+Hello {!User.FirstName},
+
+Your Project "{!Project__c.Name}" is now {!Project__c.Status__c}.
+
+Here is the Project information:
+
+Project Name: {!Project__c.Name}
+
+Status: {!Project__c.Status__c}
+
+Amount of Test Cases: {!Project__c.Cases_Amount__c}

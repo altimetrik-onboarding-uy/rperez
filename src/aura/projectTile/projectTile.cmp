@@ -18,49 +18,48 @@
     
     
     
-    <h1 class= "slds-page-header slds-text-align_center slds-text-heading_small slds-text-title_caps h1class" >
-        Ongoing Projects
-    </h1>
+    <h1 class= "slds-page-header slds-text-align_center slds-text-heading_small slds-text-title_caps h1class" >Testacular</h1>
     <div class="slds-box divclass">    
-        <div class="slds-grid slds-gutters" >
-            <div class="slds-col">
-                
-                <!--                     TILE ITEM                        -->
-                
-                <div class="slds-box slds-float_left" style= "width: 50rem;">
-                    <lightning:layout  multipleRows="true">
-                        <aura:iteration items="{!v.projects}" var="project">
-                            <c:projectTileItem project="{!project}"/>
-                        </aura:iteration>
-                    </lightning:layout>
+        <div class="slds-grid slds-gutters " >
+            
+            <!--                     TILE ITEM                        -->
+            
+            <div style= "width: 50rem;">
+                <c:projectsHeader></c:projectsHeader>
+                <div class="slds-box">
+                <lightning:layout class = "layoutClass" multipleRows="true">
+                    <aura:iteration items="{!v.projects}" var="project">
+                        <c:projectTileItem project="{!project}"/>
+                    </aura:iteration>
+                </lightning:layout>
+            </div>
+        </div>
+            
+            <!--                              PROJECT DETAILS                       -->
+            
+            <aura:if isTrue="{!v.projectToCheck != null}">
+                <div class="slds-float_left" style = "width: 37rem;">
+                    <c:projectDetails project="{!v.projectToCheck}"
+                                      testCases= "{!v.testCases}"/>
                 </div>
-                
-                <!--                              PROJECT DETAILS                       -->
-                
-                <aura:if isTrue="{!v.projectToCheck != null}">
-                    <div class="slds-float_left" style = "width: 30rem;">
-                        <c:projectDetails project="{!v.projectToCheck}"
-                                          testCases= "{!v.testCases}"/>
-                    </div>
-                </aura:if>
-                
-                <!--                       CREATE CASE                               -->             
-                <aura:if isTrue="{!v.showCreateCase > 0}">
-                <div class="slds-box divclass slds-float_right" style = "width: 30rem;">
+            </aura:if>
+            
+            <!--                       CREATE CASE                               -->             
+            <aura:if isTrue="{!v.showCreateCase > 0}">
+                <div class="slds-float_right" style = "width: 30rem;">
                     <c:createTestCase project = "{!v.projectToCheck}"/>
                 </div>
-                </aura:if>
-                
-                
-                <aura:if isTrue="{!v.showEditCase > 0}">
-                    <div class="slds-box divclass slds-float_right" style = "width: 30rem;">
+            </aura:if>
+            
+            
+            <aura:if isTrue="{!v.showEditCase > 0}">
+                <div class="slds-float_right" style = "width: 30rem;">
                     <c:createTestCase project = "{!v.projectToCheck}"
                                       newTestCase = "{!v.editTestCase}"
                                       showEditCase = "{!v.showEditCase}"/>
                 </div>
-                </aura:if>
-                
-            </div>
+            </aura:if>
+            
         </div>
     </div>
     

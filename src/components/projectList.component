@@ -1,0 +1,22 @@
+<apex:component controller="templateController" access="global">
+    <apex:attribute name="projectOwner" type="Id" description="Id of the project Owner" assignTo="{!owner}"/>
+    
+    <table style="border-collapse: collapse;table-layout:fixed" width="700" border="1">
+        
+        <tr style ="color:#6e7277; face:Arial, Helvetica, sans-serif; font-size:12px; width:20%;">
+            <td style="border:solid 1px;text-align:center;"> Project Name</td>
+            <td style="border:solid 1px;text-align:center;"> Status</td>
+            <td style="border:solid 1px;text-align:center;"> Test Cases</td>
+        </tr>
+        
+        <apex:repeat value="{!projectList}" var="pro">
+            <tr>
+                <td style="border:solid 1px;text-align:center;"> {!pro.Name} </td>
+                <td style="border:solid 1px;text-align:center;"> {!pro.Status__c} </td>
+                <td style="border:solid 1px;text-align:center;"> {!pro.Cases_Amount__c} </td>
+            </tr>
+        </apex:repeat>
+        
+    </table>
+    
+</apex:component>

@@ -1,0 +1,55 @@
+44.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;NBA,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+17:27:34.0 (156470)|USER_INFO|[EXTERNAL]|0051U000000NOIC|rperez@altimetrik.com|Hora de Argentina|GMT-03:00
+17:27:34.0 (209980)|EXECUTION_STARTED
+17:27:34.0 (217739)|CODE_UNIT_STARTED|[EXTERNAL]|Aura
+17:27:34.0 (1526010)|CODE_UNIT_STARTED|[EXTERNAL]|01p1U000003SMyj|testCaseStepsController.getSteps(Test_Case__c)
+17:27:34.0 (1799313)|HEAP_ALLOCATE|[72]|Bytes:3
+17:27:34.0 (1881293)|HEAP_ALLOCATE|[77]|Bytes:152
+17:27:34.0 (1895923)|HEAP_ALLOCATE|[342]|Bytes:408
+17:27:34.0 (1908012)|HEAP_ALLOCATE|[355]|Bytes:408
+17:27:34.0 (1919688)|HEAP_ALLOCATE|[467]|Bytes:48
+17:27:34.0 (1945798)|HEAP_ALLOCATE|[139]|Bytes:6
+17:27:34.0 (1960587)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:1
+17:27:34.0 (1978132)|METHOD_ENTRY|[1]|01p1U000003SMyj|testCaseStepsController.testCaseStepsController()
+17:27:34.0 (1992186)|STATEMENT_EXECUTE|[1]
+17:27:34.0 (2003560)|STATEMENT_EXECUTE|[1]
+17:27:34.0 (2010102)|METHOD_EXIT|[1]|testCaseStepsController
+17:27:34.0 (2025310)|SYSTEM_MODE_ENTER|false
+17:27:34.0 (2042147)|VARIABLE_SCOPE_BEGIN|[3]|recordCase|Test_Case__c|true|false
+17:27:34.0 (2078027)|VARIABLE_ASSIGNMENT|[3]|recordCase|null|
+17:27:34.0 (2089174)|STATEMENT_EXECUTE|[4]
+17:27:34.0 (2091602)|STATEMENT_EXECUTE|[5]
+17:27:34.0 (2095367)|HEAP_ALLOCATE|[5]|Bytes:82
+17:27:34.0 (2117445)|HEAP_ALLOCATE|[5]|Bytes:4
+17:27:34.0 (2130322)|HEAP_ALLOCATE|[5]|Bytes:7
+17:27:34.0 (2157804)|HEAP_ALLOCATE|[50]|Bytes:5
+17:27:34.0 (2188315)|HEAP_ALLOCATE|[56]|Bytes:5
+17:27:34.0 (2195268)|HEAP_ALLOCATE|[64]|Bytes:7
+17:27:34.0 (2286518)|EXCEPTION_THROWN|[5]|System.NullPointerException: Attempt to de-reference a null object
+17:27:34.0 (2460696)|HEAP_ALLOCATE|[5]|Bytes:41
+17:27:34.0 (2584247)|FATAL_ERROR|System.NullPointerException: Attempt to de-reference a null object
+
+Class.testCaseStepsController.getSteps: line 5, column 1
+17:27:34.0 (2599466)|FATAL_ERROR|System.NullPointerException: Attempt to de-reference a null object
+
+Class.testCaseStepsController.getSteps: line 5, column 1
+17:27:34.2 (2606391)|CUMULATIVE_LIMIT_USAGE
+17:27:34.2 (2606391)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+17:27:34.2 (2606391)|CUMULATIVE_LIMIT_USAGE_END
+
+17:27:34.0 (2654074)|CODE_UNIT_FINISHED|testCaseStepsController.getSteps(Test_Case__c)
+17:27:34.0 (6985520)|CODE_UNIT_FINISHED|Aura
+17:27:34.0 (8015553)|EXECUTION_FINISHED

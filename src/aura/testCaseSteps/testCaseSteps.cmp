@@ -1,0 +1,33 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" controller = "testCaseStepsController">
+    
+    <aura:attribute name="steps" type="Test_Case_Step__c[]"/>
+    <aura:attribute name = "record" type="Object"/>
+    <aura:attribute name = "testCaseRecord" type="Object"/>
+    <aura:attribute name = "error" type="String"/>   
+    <force:recordData aura:id="recordHandler"
+                      recordId="{!v.recordId}"
+                      layoutType="FULL"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.testCaseRecord}"
+                      targetError="{!v.error}" />
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <aura:handler name="swapCardEvent" event="c:swapCardEvent" action="{!c.onSwapCardEvent}"></aura:handler>
+    <aura:handler name="editStepEvent" event="c:editStepEvent" action="{!c.onEditStepEvent}"></aura:handler>
+    <h1 class= "slds-page-header" >
+        <lightning:button iconName="action:new" class="slds-size_xxx-small slds-float_right" 
+                          onclick= "{!c.fireNewStep}"/>
+        <h1>Test Case Steps</h1>    
+    </h1>
+    
+    <div class="slds-col colClass">
+        <div class="slds-box boxClass">
+            <aura:iteration items="{!v.steps}" var="step">
+                <c:stepCard step= "{!step}"/>
+            </aura:iteration>
+        </div>
+    </div>
+    
+</aura:component>

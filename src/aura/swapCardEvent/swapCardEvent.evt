@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT">
+    <aura:attribute name="stepDrop" type="Test_Case_Step__c"/>
+    <aura:attribute name="stepDrag" type="Test_Case_Step__c"/>
+</aura:event>

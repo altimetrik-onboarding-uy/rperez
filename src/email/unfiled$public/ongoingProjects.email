@@ -1,0 +1,10 @@
+<messaging:emailTemplate subject="Your Ongoing Projects" recipientType="User" >
+<messaging:htmlEmailBody >
+Hello {!recipient.FirstName},<br/><br/>
+
+Below is the list of all the Ongoing Projects you own.<br/><br/>
+
+<c:projectList projectOwner="{!recipient.Id}" /><br/><br/>
+
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

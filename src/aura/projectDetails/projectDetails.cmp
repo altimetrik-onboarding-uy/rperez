@@ -9,16 +9,18 @@
     
     <h1 class= "slds-page-header slds-text-title_caps titleClass" >
         <lightning:icon iconName="custom:custom27" alternativeText="Test Cases" />
-        {!' '+v.project.Name}
+        {!' '+v.project.Name + ' Details'}
     </h1>
     <div class="slds-box">
         <div class="slds-p-horizontal--small">
-            <p class="slds-text-heading--small">
-                Status:
-                <lightning:formattedText title="Status" value="{!v.project.Status__c}" /></p>
-            <p class="slds-text-heading--small">
-                Description:
-                <lightning:formattedText title="Description" value="{!v.project.Description__c}" /></p>
+            
+            <dl class="slds-list_horizontal slds-wrap">
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Status">Status:</dt>
+                <dd class="slds-item_detail slds-truncate" title="Description for Status">{!v.project.Status__c}</dd>
+                <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Description ">Description:</dt>
+                <dd class="slds-item_detail slds-truncate" title="Description">{!v.project.Description__c}</dd>
+            </dl>
+            
         </div>
     </div>
     
@@ -31,14 +33,13 @@
         <lightning:icon iconName="standard:list_email" alternativeText="Test Cases" />
         {!' Test Cases ('+v.testCases.length+')'}
     </h1>
-    <div class="slds-box">
-        <div class="slds-grid slds-gutters" >
-            <div class="slds-col">
-                <aura:iteration items="{!v.testCases}" var="case">
-                    <c:projectDetailsItem case="{!case}"/>
-                </aura:iteration>
-            </div>
-        </div>            
-    </div>
+    
+    <div class="slds-grid slds-gutters" >
+        <div class="slds-col">
+            <aura:iteration items="{!v.testCases}" var="case">
+                <c:projectDetailsItem case="{!case}"/>
+            </aura:iteration>
+        </div>
+    </div>            
     
 </aura:component>

@@ -1,18 +1,18 @@
 .THIS .slds-text-heading_small{
     font-size: 25px ;
-    font-weight: bold ;
-    padding:20px;
+    
     
 }
 .divclass.THIS {
     background-color: #FFFFFF;
-    padding:20px;
     
     
 }
 .h1class.THIS {
     background-color: #FFFFFF;
-    padding:20px;
     font-weight: bold ;
      font-size: 20px ;
+}
+.layoutClass.THIS {
+    margin-right: 100px;
 }

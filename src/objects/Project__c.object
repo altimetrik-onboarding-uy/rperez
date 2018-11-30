@@ -60,6 +60,15 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>Cases_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Cases Amount</label>
+        <summaryForeignKey>Test_Case__c.Project__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Description__c</fullName>
         <externalId>false</externalId>
         <label>Description</label>
