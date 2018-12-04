@@ -1,0 +1,58 @@
+<aura:component >
+    <aura:attribute name="project" type="Project__c"/>
+    <aura:attribute name="showEditCase" type="Integer" default="0"/>
+    <aura:attribute name="newTestCase" type="Test_Case__c"
+                    default="{'sobjectType' : 'Test_Case__c',
+                             'Name' : '',
+                             'Title__c' : '',
+                             'Description__c' : '',
+                             'Preconditions__c' : '',
+                             'User_Story__c' : '',
+                             'Project__c' : ''}"/>
+    
+    <aura:registerEvent name="createTestCaseEvent" type="c:createTestCaseEvent"/>
+    <aura:registerEvent name="hideCreateTestCaseEvent" type="c:hideCreateTestCaseEvent"/>
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <h1 class= "slds-page-header slds-text-title_caps testCaseClass" >
+        <lightning:button iconName="utility:close" class="slds-size_xxx-small slds-float--right" onclick="{!c.fireHideCreateTestCaseEvent}" />
+        <lightning:icon iconName="custom:custom23" size="small" alternativeText="Test Case" />
+        <aura:if isTrue="{!v.showEditCase > 0}">
+            {!'Edit: ' + v.newTestCase.Name + ' '}
+            <aura:set attribute="else">
+                {!' ' + v.project.Name + ' new Test Case'}
+            </aura:set>
+        </aura:if>
+    </h1>
+    
+    <lightning:input aura:id="caseField" 
+                     name="title"
+                     value="{!v.newTestCase.Title__c}"
+                     label="Title:"/>
+    
+    <lightning:input aura:id="caseField" 
+                     name="description" 
+                     label="Description:"
+                     value="{!v.newTestCase.Description__c}"
+                     required="true"/>
+    
+    <lightning:input aura:id="caseField" 
+                     name="preconditions"
+                     value="{!v.newTestCase.Preconditions__c}"
+                     label="Preconditions:"/>
+    
+    <lightning:input aura:id="caseField"
+                     name="userStory" 
+                     label="User Story:"
+                     value="{!v.newTestCase.User_Story__c}"
+                     required="true"/>
+    
+    
+    <div class="slds-modal__footer" >
+        <lightning:button class = "slds-icon_container_circle " onclick= "{!c.fireCreateTestCaseEvent}">
+            <h1>Save</h1>
+        </lightning:button>
+        
+    </div>
+</aura:component>

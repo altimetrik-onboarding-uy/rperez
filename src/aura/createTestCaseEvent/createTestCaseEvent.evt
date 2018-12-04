@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT">
+    <aura:attribute name="project" type="Project__c"/>
+    <aura:attribute name="newTestCase" type="Test_Case__c"/>
+</aura:event>
